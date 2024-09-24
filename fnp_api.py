@@ -43,7 +43,8 @@ def preprocess_text(text: str) -> str:
 @app.post('/fake_news_prediction')
 def fake_news_prediction(input_parameters: ModelInput) -> Dict[str, str]:
     # Combine title, author, and text
-    combined_text = input_parameters.title + ' ' + input_parameters.author + ' ' + input_parameters.text
+    combined_text = input_parameters.title + ' ' + input_parameters.author 
+    # combined_text = input_parameters.title + ' ' + input_parameters.author + ' ' + input_parameters.text
     
     # Preprocess the combined text
     processed_input = preprocess_text(combined_text)
